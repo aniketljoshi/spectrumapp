@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { IEvent } from 'src/app/shared/interface/ievent.model';
+import { IEvent } from 'src/app/shared/interface/ievent';
 import { Event } from 'src/app/shared/models/event.model';
 import { environment } from 'src/environments/environment';
 
