@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-7"></div>
+            <div class="col-md-2 text-right">
+                <a class="btn btn-pill btn-primary" routerLink="/new-request">{{translations.newRequest.newRequest}}</a>
+            </div>
+        </div>
+        <div class="card">
+            <form>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">{{translations.common.appName}}</th>
+                            <th scope="col" sortable="name" (sort)="onSort($event)">
+                                {{translations.common.pathIdentifier}}</th>
+                            <th scope="col" sortable="area" (sort)="onSort($event)">{{translations.common.downStramUrl}}
+                            </th>
+                            <th scope="col" sortable="population" (sort)="onSort($event)">{{translations.common.status}}
+                            </th>
+                            <th scope="col">{{translations.common.action}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let proxySetting of proxySettings">
+                            <th scope="row">{{  proxySetting.appName }}</th>
+                            <td>
+                                {{ proxySetting.pathIdentifier }}
+                            </td>
+                            <td>{{ proxySetting.downStreamUrl }}</td>
+                            <td><span class="badge badge-warning">{{translations.common.pending}}</span></td>
+                            <td>
+                                <a role="button" class="mr-2" (click)="open(proxySetting)"><span
+                                        class="fa fa-eye fa-lg"></span></a>
+                                <a role="button" [routerLink]="['/edit-request/edit-request']" [state]=proxySetting
+                                    class="mr-2"><span class="fa fa-edit fa-lg"></span></a>
+                                <a role="button" (click)="openConfirmationDialog()"><span class="fa fa-trash fa-lg"></span></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-between p-2">
+                    <ngb-pagination [collectionSize]="total$" [pageSize]="pagegSize">
+                    </ngb-pagination>
+                    {{translations.pagination.showing}} 1 {{translations.pagination.to}} 3
+                    {{translations.pagination.of}} 3
+                    {{translations.pagination.entries}}
+                    <select class="custom-select" style="width: auto" name="pageSize">
+                        <option [ngValue]="5">5 {{translations.pagination.itemsPerPage}}</option>
+                        <option [ngValue]="10">10 {{translations.pagination.itemsPerPage}}</option>
+                        <option [ngValue]="15">15 {{translations.pagination.itemsPerPage}}</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
