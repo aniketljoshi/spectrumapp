@@ -1,8 +1,9 @@
 export class Member {
-    memberId: string;
+    _id: string;
     age: number;
-    name: object;
+    name: {first, last};
     company: string;
     email: string;
     phone: string;
+    eventCount: number;
 }

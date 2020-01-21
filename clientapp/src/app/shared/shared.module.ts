@@ -7,6 +7,7 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 import { BootstraptModule } from './components/bootstrap/bootstrap.module';
+import { NgbdSortableHeader } from './directive/sortable.directive';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { BootstraptModule } from './components/bootstrap/bootstrap.module';
     HeaderComponent,
     FooterComponent,
     ConfirmationDialogComponent,
+    NgbdSortableHeader
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { BootstraptModule } from './components/bootstrap/bootstrap.module';
     HeaderComponent,
     FooterComponent,
     ConfirmationDialogComponent,
-    BootstraptModule
+    BootstraptModule,
+    NgbdSortableHeader
   ],
   entryComponents: [ConfirmationDialogComponent]
 })

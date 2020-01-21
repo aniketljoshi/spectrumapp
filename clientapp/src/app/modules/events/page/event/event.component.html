@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="card">
+            <form>
+                <table class="table table-striped mb-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                {{translations.events.organizer}}
+                            </th>
+                            <th scope="col">
+                                {{translations.events.company}}</th>
+                            <th scope="col">{{translations.events.about}}
+                            </th>
+                            <th scope="col">{{translations.events.scheduledAt}}
+                            </th>
+                            <th scope="col">{{translations.events.capacity}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let event of events, let memberIndex  = index">
+                            <th scope="row">{{ event.organizer?.first}} {{ event.organizer?.last}}</th>
+                            <td>
+                                {{ event.company }}
+                            </td>
+                            <td>{{ event.about }}</td>
+                            <td>{{ event.scheduled_at | date:'EEEE, MMMM d, y, h:mm a' }}</td>
+                            <td>{{ event.capacity }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>

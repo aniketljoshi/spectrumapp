@@ -31,4 +31,9 @@ export class MembersService implements IMember {
   updateMember(even: Member) {
     throw new Error("Method not implemented.");
   }
+
+  deleteMember(id: string): Observable<string> {
+    return this.http.delete<string>(environment.baseUrl + '/json/delete/NyNrlJTX8?id=' + id, httpOptions);
+  }
 }
+

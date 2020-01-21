@@ -5,4 +5,5 @@ export interface IMember {
     getMember(id: string);
     createMember(event: Member);
     updateMember(even: Member);
+    deleteMember(id: string);
 }

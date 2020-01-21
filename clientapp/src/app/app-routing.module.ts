@@ -15,6 +15,11 @@ export const routes: Routes = [
         path: 'dashboard',
         loadChildren: () =>
           import('./modules/home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'events',
+        loadChildren: () =>
+          import('./modules/events/events.module').then(m => m.EventsModule)
       }
     ]
   }
