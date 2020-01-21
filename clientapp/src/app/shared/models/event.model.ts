@@ -1,9 +1,9 @@
 export class Event {
-    eventId: string;
+    _id: string;
     organizer: object;
     company: string;
     about: string;
-    scheduledAt: Date;
+    scheduled_at: Date;
     duration: number;
     capacity: number;
 }
